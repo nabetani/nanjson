@@ -9,12 +9,9 @@ function test($val)
   } else {
     echo(var_export($json));
     echo(" / ");
-    echo(var_export(error_get_last())."\n");
+    echo(var_export(json_last_error_msg())."\n");
   }
 }
 
-$inf = 9**9**9;
-$nan = $inf-$inf;
-
-test( $nan );
-test( $inf );
+test( INF );
+test( NAN );
